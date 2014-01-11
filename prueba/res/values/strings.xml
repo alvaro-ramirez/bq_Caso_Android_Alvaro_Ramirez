@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Prueba BQ</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="nameuser">Usuario</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="title_activity_main_login">Login</string>
+    <string name="cancel">Cancelar</string>
+    <string name="title_activity_libros">Mi biblioteca</string>
+   
+
+</resources>
