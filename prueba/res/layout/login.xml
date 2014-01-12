@@ -45,21 +45,7 @@
             android:text="Recordarme" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Olvidé mi contraseña"
-            android:clickable="true"
-            android:onClick="recordarpass"
-            android:textColor="#0000FF"
-            android:textStyle="bold" />
-    </LinearLayout>
-
+   
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="match_parent" >

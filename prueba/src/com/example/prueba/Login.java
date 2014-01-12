@@ -50,6 +50,7 @@ public class Login extends Activity {
                         new Intent(Login.this, Libros.class);
                 //Iniciamos la nueva actividad
                 startActivity(intent);
+                finish(); // para matar esta pantalla, y no se pueda volver a ella
 			}
 		});
 
