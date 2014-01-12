@@ -12,8 +12,7 @@ import android.widget.TextView;
 
 public class Libros extends ListActivity {
 	private TextView seleccionado;
-	private static final String [] items = { "Harry Potter","El Psicoanalista","Vida de Pi",
-		"1890","El señor de los anillos","El Hobbit","Rebelión en la granja"};
+	private static final String [] items = { "Harry Potter","El Psicoanalista","Vida de Pi","El señor de los anillos","El Hobbit","Rebelión en la granja"};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
