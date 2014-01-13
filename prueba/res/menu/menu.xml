@@ -4,12 +4,12 @@
     <item
         android:id="@+id/item1"
         android:title="@string/item1"
-        android:icon="@drawable/ic_ord_alfab">
+        android:icon="@android:drawable/ic_menu_sort_alphabetically">
     </item>
     <item
         android:id="@+id/item2"
         android:title="@string/item2"
-        android:icon="@drawable/ic_ord_fecha">
+        android:icon="@android:drawable/ic_menu_week">
     </item>
 
 </menu>

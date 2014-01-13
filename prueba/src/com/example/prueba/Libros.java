@@ -13,14 +13,15 @@ import android.widget.TextView;
 
 public class Libros extends ListActivity {
 	private TextView seleccionado;
-	private static final String [] items = { "Harry Potter","El Psicoanalista","Vida de Pi","El señor de los anillos","El Hobbit","Rebelión en la granja"};
+	// Mientras no se haga la consulta de datos de DropBox, usamos estos libros estáticos:
+	private static final String [] libros = { "Harry Potter","El Psicoanalista","Vida de Pi","El señor de los anillos","El Hobbit","Rebelión en la granja"};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.libros);
-		setListAdapter(new ArrayAdapter<String>(this,R.layout.filalibro,R.id.label,items));
+		setListAdapter(new ArrayAdapter<String>(this,R.layout.filalibro,R.id.label,libros));
 		
 	}
 	
@@ -44,10 +45,21 @@ public class Libros extends ListActivity {
 	@Override
 	public boolean onOptionsItemSelected (MenuItem item){
 		switch (item.getItemId()){
-		case R.id.item1: break;  // métodos de ordenación
-		case R.id.item2: break;
+		case R.id.item1:
+							ordenarAlfab();
+							break;  // métodos de ordenación
+		case R.id.item2: 
+							ordenarFecha();
+							break;
 		}
 		return true;
 	}
 
+	public void ordenarAlfab(){
+		
+	}
+	
+	public void ordenarFecha(){
+		
+	}
 }
