@@ -1,6 +1,7 @@
 package com.example.prueba;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,6 +26,11 @@ public class Libros extends ListActivity {
 	
 	public void onListItemClick(ListView parent, View v, int position, long id) {
 	//...aqui mostrar la portada de cada libro clicado
+		Intent intent =
+                new Intent(Libros.this, MuestraPortada.class);
+        //Iniciamos la Portada
+        startActivity(intent);
+        
 	}
 
 	@Override

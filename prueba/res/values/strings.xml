@@ -9,7 +9,9 @@
     <string name="title_activity_main_login">Login</string>
     <string name="cancel">Cancelar</string>
     <string name="title_activity_libros">Mi biblioteca</string>
-        <string name="item1">Ordenar alfabéticamente</string>
-        <string name="item2">Ordenar por fecha</string>
-        
+    <string name="item1">Ordenar alfabéticamente</string>
+    <string name="item2">Ordenar por fecha</string>
+    <string name="title_activity_muestra_portada">Portada</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

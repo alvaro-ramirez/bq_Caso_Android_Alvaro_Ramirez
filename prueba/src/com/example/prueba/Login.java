@@ -45,6 +45,7 @@ public class Login extends Activity {
 			    // tenemos el login y el pass, se manda a la api de dropbox...
 			    // fin dropbox
 			    // Ahora abrimos la Activity lista
+			    // falta comprobar si está activado el chekbox y usando sharedpreferences...
 			  //Creamos el Intent
                 Intent intent =
                         new Intent(Login.this, Libros.class);

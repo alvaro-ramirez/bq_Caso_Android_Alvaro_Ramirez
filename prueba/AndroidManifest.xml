@@ -9,6 +9,7 @@
         android:targetSdkVersion="8" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -25,10 +26,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-       
         <activity
             android:name="com.example.prueba.Libros"
             android:label="@string/title_activity_libros" >
+        </activity>
+        <activity
+            android:name="com.example.prueba.MuestraPortada"
+            android:label="@string/title_activity_muestra_portada"
+            android:theme="@android:style/Theme.Dialog" 
+          >
         </activity>
     </application>
 
