@@ -1,13 +1,8 @@
 package com.example.prueba;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -15,7 +10,6 @@ import android.widget.EditText;
 
 import com.dropbox.client2.DropboxAPI;
 import com.dropbox.client2.android.AndroidAuthSession;
-import com.dropbox.client2.android.AuthActivity;
 import com.dropbox.client2.session.AccessTokenPair;
 import com.dropbox.client2.session.AppKeyPair;
 import com.dropbox.client2.session.Session.AccessType;
@@ -23,9 +17,9 @@ import com.dropbox.client2.session.Session.AccessType;
 public class Login extends Activity {
 
 	// Claves para usar y autenticar nuestra App con Dropbox
-	final static private String APP_KEY = "aqlpzm4pt4juvm4";
-	final static private String APP_SECRET = "k2lb0m80cywmkso";
-	final static private AccessType ACCESS_TYPE = AccessType.DROPBOX;
+	final static private String APP_KEY = "e84tnbc1q4tebbn";
+	final static private String APP_SECRET = "amd4zqipk7wb70e";
+	final static private AccessType ACCESS_TYPE = AccessType.APP_FOLDER;
 
 	private DropboxAPI<AndroidAuthSession> mDBApi;
 
@@ -38,25 +32,20 @@ public class Login extends Activity {
 		inicializar();
 
 		// Localizar los controles
-		Button buttondc = (Button) findViewById(R.id.buttondc); // cancelar
+		//Button buttondc = (Button) findViewById(R.id.buttondc); // cancelar
 		Button buttondl = (Button) findViewById(R.id.buttondl); // login
-		buttondc.setOnClickListener(new OnClickListener() {
+		
+		/*buttondc.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				finish(); // el boton cancelar cierra la app
 			}
 		});
-
+*/
 		buttondl.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// aqui debe conectarse a dropbox. Por ahora saltamos ese paso y
-				// vamos directo a la lista de libros.
-				EditText edtLogin = (EditText) findViewById(R.id.editText1);
-				String login = edtLogin.getText().toString();
-				EditText edtPass = (EditText) findViewById(R.id.editText2);
-				String pass = edtPass.getText().toString();
-
+				
 				/*
 				 * Para recordar el inicio de sesión, usamos sharedpreferences
 				 * 
@@ -77,6 +66,21 @@ public class Login extends Activity {
 			}
 		});
 
+	}
+	
+	protected void onResume() {
+	    super.onResume();
+
+	    if (mDBApi.getSession().authenticationSuccessful()) {
+	        try {
+	            // Required to complete auth, sets the access token on the session
+	            mDBApi.getSession().finishAuthentication();
+
+	            AccessTokenPair tokens = mDBApi.getSession().getAccessTokenPair();
+	        } catch (IllegalStateException e) {
+	            Log.i("DbAuthLog", "Error de autenticación", e);
+	        }
+	    }
 	}
 
 	private void inicializar() {
